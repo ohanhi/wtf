@@ -2,7 +2,7 @@
 
 The best Flux library. WTF gives you a mental model which makes it easier to reason about which Flux library you should choose: What The Flux.
 
-We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, but we're working on it. Negotiating expensive domains isn't easy and not all open-source projects get to do this for self-promotion, but we're trying. ;)
+We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, but we're working on it. Negotiating expensive domains isn't easy and not all open-source libraries get to do this for self-promotion, but we're trying. ;)
 
 - - -
 
