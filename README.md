@@ -1,17 +1,17 @@
 # What The Flux
 
-The best Flux library. One Flux to rule them all. Undisputable. WTF gives you a mental model which makes it easier to reason about which Flux library should you choose: What The Flux.
+The best Flux library. WTF gives you a mental model which makes it easier to reason about which Flux library you should choose: What The Flux.
 
-We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, but we're working on it. Negotiating expensive domains isn't easy and not all open-source projects get to do this much for self-promotion, but we're trying. ;)
+We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, but we're working on it. Negotiating expensive domains isn't easy and not all open-source projects get to do this for self-promotion, but we're trying. ;)
 
 - - -
 
 ### Dispatchers everywhere
 
-Traditional Flux has only one single Dispatcher placed between Actions and Stores. WTF allows you to have multiple Dispatchers, between any two entities you wish, with a simple programming model. You could place a Dispatcher between Stores and Views, and even a Dispatcher between Dispatchers. This enables data flow to automatically propagate between unidirectional Dispatchers.
+Traditional Flux has only one single Dispatcher placed between Actions and Stores. WTF allows you to have multiple Dispatchers, between any two entities you wish, with a simple programming model. You could place a reactive Dispatcher between Stores and Views, and even a Dispatcher between Dispatchers. This enables data flow to automatically propagate between unidirectional Dispatchers.
 
 ```js
-import * as WTF from 'wtf';
+import * as WTF from 'wtf-flux';
 
 @WTF.between(class Betweener extends WTF.Betweenable {
   injectDispatcher(dispatcher) {
@@ -54,10 +54,10 @@ class Dispatcher extends WTF.Dispatchable {
 
 ### Declarative Dispatcher Actions
 
-Use Dispatcher Actions to allow your Dispatcher to **declaratively** send Actions to Stores while at the same time receiving real-time push events from Stores. It makes it easier to reason about state and data binding.
+Use Dispatcher Actions to allow your Dispatcher to **declaratively** send one-way Actions to Stores while at the same time receiving real-time push events from Stores. It makes it easier to reason about state and data binding.
 
 ```js
-import {Dispatchable, DefaultAction, AlternateAction} from 'wtf';
+import {Dispatchable, DefaultAction, AlternateAction} from 'wtf-flux';
 import {ComponentFoo, ComponentBar} from 'src/my-components'; 
 
 const DispatcherAction = (
@@ -92,7 +92,7 @@ Most Flux libraries allow you to create Actions with an Action Creator. However,
 
 **An Action Creator Creator**
 ```js
-import * as WTF from 'wtf';
+import * as WTF from 'wtf-flux';
 
 const HigherOrderConstants = WTF.createConstants(
   [() => 'UPDATE_AGE', () => 'SET_NAME', () => 'REPLACE_MOTHER_IN_LAW']
@@ -120,7 +120,7 @@ class MyActionCreatorCreator extends WTF.GenericActionCreator {
 
 **An Action Creator Creator Creator**
 ```js
-import * as WTF from 'wtf';
+import * as WTF from 'wtf-flux';
 
 const HigherOrderConstants = WTF.createConstants([
   () => () => 'UPDATE_AGE',
@@ -154,7 +154,7 @@ class MyActionCreatorCreatorCreator extends WTF.GenericActionCreator {
 }
 ```
 
-### Stateless referentially-transparent pure functions
+### Stateless referentially-transparent pure side-effectless functions
 
 WTF provides a custom implementation of a function which forces the function to be free of side effects, hence easier to reason about. In WTF you don't use JavaScript's function which is by nature unsafe because it can always have side effects. Instead, you use `Funk`, a type-safe decorated class to represent data binding reactive pure functions in a type-safe model easier to reason about.
 
@@ -195,7 +195,7 @@ To compose these operations, use a Higher-Order Funk, in other words, a `Hi-Fu`.
 
 ### Model Stores
 
-Vanilla Flux replaces the MVC mental model with Stores, Actions, and Dispatcher. Stores in Flux are different to Models in MVC because the latter starts with the letter M. Also, Stores provide you the mental model of, well, a "Store"! This makes it much easier to reason about what they actually do: *data flow* analogous to *economy flow* with commercial transactions. On the other hand, there is a property of MVC Models which Stores lack: the presence of a mental **model**. WTF provides you Stores as a mental **model** in which reasoning about becomes easier and effortless. There is an easy helper function (in fact, a `Funk`), which delivers you Model Stores.
+Vanilla Flux replaces the MVC mental model with Stores, Actions, and Dispatcher. Stores in Flux are different to Models in MVC because the latter starts with the reactive letter M. Also, Stores provide you the mental model of, well, a "Store"! This makes it much easier to reason about what they actually do: *data flow* analogous to *economy flow* with commercial transactions. On the other hand, there is a property of MVC Models which Stores lack: the presence of a mental **model**. WTF provides you Stores as a mental **model** in which reasoning about becomes easier and effortless. There is an easy helper function (in fact, a `Funk`), which delivers you Model Stores.
 
 ```js
 const modelStoreCreator = Funk({
