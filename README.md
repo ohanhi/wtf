@@ -21,7 +21,7 @@ npm install wtflux
 
 ### Dispatchers everywhere
 
-Traditional Flux has only one single Dispatcher placed between Actions and Stores. WTF allows you to have multiple Dispatchers, between any two entities you wish, with a simple programming model. You could place a reactive Dispatcher between Stores and Views, and even a Dispatcher between Dispatchers. This enables data flow to automatically propagate between unidirectional Dispatchers.
+Traditional Flux has only one single Dispatcher placed between Actions and Stores. This obviously does not scale. WTF allows you to have multiple Dispatchers, between any two entities you wish, with a simple programming model. You could place a reactive Dispatcher between Stores and Views, and even a Dispatcher between Dispatchers. This enables data flow to automatically propagate between unidirectional Dispatchers.
 
 ```js
 import * as WTF from 'wtf-flux';
