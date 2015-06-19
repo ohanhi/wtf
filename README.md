@@ -208,7 +208,7 @@ To compose these operations, use a Higher-Order Funk, in other words, a `Hi-Fu`.
 
 ### Model Stores
 
-Vanilla Flux replaces the MVC mental model with Stores, Actions, and Dispatcher. Stores in Flux are different to Models in MVC because the latter starts with the reactive letter M. Also, Stores provide you the mental model of, well, a "Store"! This makes it much easier to reason about what they actually do: *data flow* analogous to *economy flow* with commercial transactions. On the other hand, there is a property of MVC Models which Stores lack: the presence of a mental **model**. WTF provides you Stores as a mental **model** in which reasoning about becomes easier and effortless. There is an easy helper function (in fact, a `Funk`), which delivers you Model Stores.
+Vanilla Flux replaces the MVC mental model with Stores, Actions, and Dispatcher. Stores in Flux are different to Models in MVC because the latter starts with the one-way letter M. Also, Stores provide you the mental model of, well, a "Store"! This makes it much easier to reason about what they actually do: *data flow* analogous to *economy flow* with commercial transactions. On the other hand, there is a property of MVC Models which Stores lack: the presence of a mental **model**. WTF provides you Stores as a mental **model** in which reasoning about becomes easier and effortless. There is an easy helper function (in fact, a `Funk`), which delivers you Model Stores.
 
 ```js
 const modelStoreCreator = Funk({
