@@ -1,0 +1,16 @@
+{
+  "name": "wtf",
+  "version": "1.0.0",
+  "description": "What The Flux - the best Flux library",
+  "main": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "flux",
+    "react",
+    "unidirectional"
+  ],
+  "author": "Andre Staltz <andre+npm@staltz.com> (http://andre.staltz.com/)",
+  "license": "MIT"
+}
