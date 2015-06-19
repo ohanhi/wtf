@@ -2,7 +2,7 @@
 
 The best Flux library. One Flux to rule them all. Undisputable. WTF gives you a mental model which makes it easier to reason about which Flux library should you choose: What The Flux.
 
-We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, but we're working on it. ;)
+We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, but we're working on it. Negotiating expensive domains isn't easy and not all open-source projects get to do this much for self-promotion, but we're trying. ;)
 
 - - -
 
@@ -18,7 +18,7 @@ import * as WTF from 'wtf';
     this.dispatcher = dispatcher.extract();
   }
   redispatch(dispatchable) {
-    this.dispatchable.reflect(this.dispatcher.reextract());
+    dispatchable.reflect(this.dispatcher.reextract());
   }
 })
 class Dispatcher extends WTF.Dispatchable {
@@ -156,7 +156,7 @@ class MyActionCreatorCreatorCreator extends WTF.GenericActionCreator {
 
 ### Stateless referentially-transparent pure functions
 
-WTF provides a custom implementation of a function which forces the function to be free of side effects. In WTF you don't use JavaScript's function which is by nature unsafe because it can always have side effects. Instead, you use `Funk`, a type-safe decorated class to represent data binding functions in a type-safe model easier to reason about.
+WTF provides a custom implementation of a function which forces the function to be free of side effects, hence easier to reason about. In WTF you don't use JavaScript's function which is by nature unsafe because it can always have side effects. Instead, you use `Funk`, a type-safe decorated class to represent data binding reactive pure functions in a type-safe model easier to reason about.
 
 Instead of
 ```js
@@ -181,7 +181,7 @@ stringToNumber("123", result);
 console.log(result); // 123
 ```
 
-As you noticed, we used `WTF.Funk.Transformations.parseInt`. This means you must use `Transformations.parseInt` instead of JavaScript's `parseInt()`. This also means we have referentially-transparent versions of all transformations JavaScript is able to do, such as:
+As you noticed, we used `WTF.Funk.Transformations.parseInt`. This means you must use `Transformations.parseInt` instead of JavaScript's `parseInt()`. This also means we have referentially-transparent reactive versions of all transformations JavaScript is able to do, such as:
 
 - `Funk.Transformations.addition`
 - `Funk.Transformations.subtraction`
@@ -193,15 +193,35 @@ As you noticed, we used `WTF.Funk.Transformations.parseInt`. This means you must
 
 To compose these operations, use a Higher-Order Funk, in other words, a `Hi-Fu`.
 
+### Model Stores
+
+Vanilla Flux replaces the MVC mental model with Stores, Actions, and Dispatcher. Stores in Flux are different to Models in MVC because the latter starts with the letter M. Also, Stores provide you the mental model of, well, a "Store"! This makes it much easier to reason about what they actually do: *data flow* analogous to *economy flow* with commercial transactions. On the other hand, there is a property of MVC Models which Stores lack: the presence of a mental **model**. WTF provides you Stores as a mental **model** in which reasoning about becomes easier and effortless. There is an easy helper function (in fact, a `Funk`), which delivers you Model Stores.
+
+```js
+const modelStoreCreator = Funk({
+  input: Funk.Types.object,
+  output: Funk.Transformations.objectToModelStore
+});
+
+let todoModelStore;
+modelStoreCreator({
+  todos: [],
+  isEditing: false,
+  filter: 'active'
+}, todoModelStore);
+```
+
+Notice how `Funk.Transformations.objectToModelStore` is a special transformation which doesn't have an equivalent in JavaScript, hence this is a more powerful approach to one-way unidirectionality.
+
 ### Higher-Order Mental Model
 
-WTF makes it easy to reason about components, but still gives you the power to abstract anything. Anything can be Higher-Order. As you can see, we can make Action Creator Creators, Dispatcher Dispatchers, Funk Funks, Mixin Mixins, with no limit. Leverage the power of an easier mental model on which you can reason about.
+WTF makes it easy to reason about components, but still gives you the power to reason about, and abstract, anything. Anything can be Higher-Order. As you can see, we can make Action Creator Creators, Dispatcher Dispatchers, Funk Funks, Mixin Mixins, with no limit. Leverage the power of an easier mental model on which you can reason about.
 
 ### LICENSE
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Andre Medeiros
+Copyright (c) 2014 Andre Staltz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
