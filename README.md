@@ -24,7 +24,7 @@ npm install wtflux
 Traditional Flux has only one single Dispatcher placed between Actions and Stores. This obviously does not scale. WTF allows you to have multiple Dispatchers, between any two entities you wish, with a simple programming model. You could place a reactive Dispatcher between Stores and Views, and even a Dispatcher between Dispatchers. This enables data flow to automatically propagate between unidirectional Dispatchers.
 
 ```js
-import * as WTF from 'wtf-flux';
+import * as WTF from 'wtflux';
 
 @WTF.between(class Betweener extends WTF.Betweenable {
   injectDispatcher(dispatcher) {
@@ -70,7 +70,7 @@ class Dispatcher extends WTF.Dispatchable {
 Use Dispatcher Actions to allow your Dispatcher to **declaratively** send one-way Actions to Stores while at the same time receiving real-time push events from Stores. It makes it easier to reason about state and data binding.
 
 ```js
-import {Dispatchable, DefaultAction, AlternateAction} from 'wtf-flux';
+import {Dispatchable, DefaultAction, AlternateAction} from 'wtflux';
 import {ComponentFoo, ComponentBar} from 'src/my-components'; 
 
 const DispatcherAction = (
@@ -105,7 +105,7 @@ Most Flux libraries allow you to create Actions with an Action Creator. However,
 
 **An Action Creator Creator**
 ```js
-import * as WTF from 'wtf-flux';
+import * as WTF from 'wtflux';
 
 const HigherOrderConstants = WTF.createConstants(
   [() => 'UPDATE_AGE', () => 'SET_NAME', () => 'REPLACE_MOTHER_IN_LAW']
@@ -133,7 +133,7 @@ class MyActionCreatorCreator extends WTF.GenericActionCreator {
 
 **An Action Creator Creator Creator**
 ```js
-import * as WTF from 'wtf-flux';
+import * as WTF from 'wtflux';
 
 const HigherOrderConstants = WTF.createConstants([
   () => () => 'UPDATE_AGE',
