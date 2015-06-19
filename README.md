@@ -8,6 +8,15 @@ We don't yet have a kick-ass webpage with a cool domain such as `www.flux.wtf`, 
 npm install wtflux
 ```
 
+[![GitHub issues](https://img.shields.io/github/issues/staltz/wtf.svg)](https://github.com/staltz/wtf/issues)
+[![GitHub forks](https://img.shields.io/github/forks/staltz/wtf.svg)](https://github.com/staltz/wtf/network)
+[![GitHub stars](https://img.shields.io/github/stars/staltz/wtf.svg)](https://github.com/staltz/wtf/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/staltz/wtf/master/LICENSE)
+[![WTFlux](https://img.shields.io/badge/flux-wtf-brightgreen.svg)](https://github.com/staltz/wtf)
+[![WTFlux](https://img.shields.io/badge/bestlib-wtf-orange.svg)](https://github.com/staltz/wtf)
+[![WTFlux](https://img.shields.io/badge/hipstersite-pending-red.svg)](https://github.com/staltz/wtf)
+[![WTFlux](https://img.shields.io/badge/coolname-yes-brightgreen.svg)](https://github.com/staltz/wtf)
+
 - - -
 
 ### Dispatchers everywhere
