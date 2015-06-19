@@ -1,6 +1,6 @@
 {
-  "name": "wtf",
-  "version": "1.0.0",
+  "name": "wtflux",
+  "version": "0.0.1",
   "description": "What The Flux - the best Flux library",
   "main": "lib",
   "scripts": {
