@@ -14,4 +14,4 @@ I felt a need for a simpler mental model to use to build Spa applications.
 
 ## Is this library a joke?
 
-The name might be reminiscent to a popular pejorative language feature, but rest assured JavaScript is a language I believe will be ruling computation still for a couple of years, maybe even decades, who knows. This is a small world and you never know who you'll bump into next. ;)
+The name might be reminiscent to a popular pejorative acronym in English, but rest assured JavaScript is a language I believe will be ruling computation still for a couple of years, maybe even decades, who knows. This is a small world and you never know who you'll bump into next. ;)
