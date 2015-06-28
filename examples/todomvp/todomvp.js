@@ -1,6 +1,6 @@
 import WTF from '../lib/index̦';
 
-const funker = new WTF.Funk(undefined);
+const funker = new WTF.Funk(​undefined);​
 funker.configuration = { transformer: new Optimus('Prime'), options: 'yes' };
 funker.setupFunk();
 
