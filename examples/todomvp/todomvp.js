@@ -7,7 +7,7 @@ funker.setupFunk();
 // JS6 classes make everything fitter, better and happier!
 class Optimus {
   constructor (feat) {
-    feat !== 'Prime' && throw new TypeError('Must be Prime.');
+    feat != 'Prime' && throw new TypeError('Must be Prime.');
     this.feat = 'Prime';
   }
   get feat () {
